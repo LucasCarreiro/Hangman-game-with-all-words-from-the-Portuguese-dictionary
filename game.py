@@ -5,20 +5,23 @@ def forca():
     print('JOGO DA FORCA')
     print('-=' * 20)
     while True:
-        print('[1] Fácil \n[2] Médio\n[3] Difícil')
+        print('[1] Muito Fácil (10 Vidas) \n[2] Fácil (7 Vidas)\n[3] Médio (5 Vidas)\n[4] Difícil (3 Vidas)\n[5] Impossível (1 Vida)')
         modo = int(input('Escolha o modo de jogo: '))
-        if modo == 1 or modo == 2 or modo == 3:
+        if modo == 1 or modo == 2 or modo == 3 or modo == 4 or modo == 5:
             break
-
     pal = p[modo - 1][randint(0, len(p[modo - 1]))]
     usadas = ''
     guess = '_' * len(pal)
     if modo == 1:
-        vidas = 7
+        vidas = 10
     elif modo == 2:
-        vidas = 5
+        vidas = 7
     elif modo == 3:
+        vidas = 5
+    elif modo == 4:
         vidas = 3
+    elif modo == 5:
+        vidas = 1
     while True:
         print('Vidas : {}'.format(vidas))
         print('Letras usadas: {}.'.format(usadas))
